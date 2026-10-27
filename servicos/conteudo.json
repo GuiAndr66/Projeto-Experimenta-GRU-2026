@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "cras", "title": "CRAS", "category": "Referência e Assistência", "image": "cras",
+    "intro": "O Centro de Referência de Assistência Social é uma unidade pública que aproxima as famílias da rede de proteção social básica.",
+    "about": "O CRAS orienta sobre direitos, serviços e benefícios e oferece acompanhamento às famílias. Entre suas atividades estão o Serviço de Proteção e Atendimento Integral à Família (PAIF) e ações para fortalecer vínculos familiares e comunitários.",
+    "audience": "Famílias e pessoas em situação de vulnerabilidade social que precisam de orientação e apoio no território onde vivem.",
+    "support": ["Orientação sobre direitos e acesso à rede socioassistencial.", "Acompanhamento familiar e encaminhamentos conforme cada situação.", "Informações sobre o Cadastro Único e os locais de cadastramento."],
+    "steps": ["Consulte os canais oficiais para identificar o CRAS de referência do seu bairro.", "Confirme horários, necessidade de agendamento e documentos antes de ir.", "Explique sua necessidade à equipe para receber orientação sobre o atendimento adequado."],
+    "note": "O atendimento no CRAS é gratuito. Procurar o serviço não garante concessão automática de benefícios.",
+    "source": "https://www.gov.br/mds/pt-br/acoes-e-programas/suas/unidades-de-atendimento/centro-de-referencia-de-assistencia-social-cras", "sourceTitle": "Ministério do Desenvolvimento Social — CRAS"
+  },
+  {
+    "slug": "creas", "title": "CREAS", "category": "Proteção Social Especial", "image": "creas",
+    "intro": "O Centro de Referência Especializado de Assistência Social atende pessoas e famílias em situações de risco social ou de violação de direitos.",
+    "about": "O CREAS oferece acompanhamento especializado, orientação e articulação com a rede de proteção. O atendimento busca apoiar a superação de situações de violência, negligência e outras violações, respeitando a história de cada pessoa.",
+    "audience": "Pessoas e famílias que vivenciam violações de direitos e precisam de proteção social especializada.",
+    "support": ["Acolhimento e escuta por uma equipe de referência.", "Orientação e acompanhamento socioassistencial especializado.", "Encaminhamento e articulação com outros serviços da rede de proteção."],
+    "steps": ["Consulte a Prefeitura para localizar o CREAS que atende sua região.", "Procure orientação diretamente ou por encaminhamento de outros serviços.", "Informe sua necessidade à equipe e combine os próximos passos do acompanhamento."],
+    "note": "O CREAS integra a rede de proteção social. Esta página informa sobre o serviço e não registra denúncias ou pedidos de atendimento.",
+    "source": "https://www.gov.br/mds/pt-br/acoes-e-programas/suas/unidades-de-atendimento/centro-de-referencia-especializado-de-assistencia-social-creas", "sourceTitle": "Ministério do Desenvolvimento Social — CREAS"
+  },
+  {
+    "slug": "alimentacao", "title": "Auxílio Alimentação", "category": "Segurança Alimentar", "image": "alimentacao",
+    "intro": "Informações para quem precisa de orientação sobre acesso à alimentação e apoio da rede socioassistencial.",
+    "about": "Nesta plataforma, Auxílio Alimentação reúne orientações sobre apoio alimentar. As ações disponíveis no município, as formas de acesso e os critérios de cada oferta devem ser confirmados com os canais oficiais. Esta página não confirma a existência de um benefício mensal específico.",
+    "audience": "Pessoas e famílias com dificuldade de acesso regular a alimentos e que precisam de orientação da rede pública.",
+    "support": ["Orientação inicial sobre serviços e ações de apoio alimentar.", "Encaminhamento à rede responsável, conforme a necessidade apresentada.", "Informações sobre avaliação socioassistencial e cadastramento quando exigidos pela oferta."],
+    "steps": ["Procure o CRAS de referência e relate sua situação.", "Pergunte quais ações estão disponíveis e quais são os critérios de acesso.", "Confirme documentos e etapas diretamente com a equipe responsável."],
+    "note": "A disponibilidade depende das ações vigentes e da avaliação da equipe. O ConnectGRU não concede benefícios ou distribui alimentos por esta página.",
+    "source": "https://www.gov.br/mds/pt-br/acoes-e-programas/suas/unidades-de-atendimento/centro-de-referencia-de-assistencia-social-cras", "sourceTitle": "Ministério do Desenvolvimento Social — orientação no CRAS"
+  },
+  {
+    "slug": "psicologico", "title": "Apoio Psicológico", "category": "Cuidado e Acolhimento", "image": "psicologico",
+    "intro": "Orientações sobre acolhimento emocional e sobre como buscar o serviço adequado na rede pública.",
+    "about": "O acompanhamento psicossocial na assistência social apoia pessoas e famílias em suas relações e condições de vida. Ele tem finalidade diferente de um tratamento clínico em saúde mental. Para demandas de saúde, a rede do SUS orienta sobre o cuidado mais adequado.",
+    "audience": "Pessoas que precisam de escuta, acolhimento e orientação para encontrar acompanhamento socioassistencial ou cuidado em saúde mental.",
+    "support": ["Orientação sobre a diferença entre acompanhamento socioassistencial e atendimento clínico.", "Acolhimento e encaminhamentos conforme a necessidade da pessoa ou família.", "Informações para buscar a rede de saúde e a rede de assistência social."],
+    "steps": ["Para questões familiares e sociais, procure orientação no CRAS ou CREAS, conforme a situação.", "Para cuidado clínico em saúde mental, procure a rede de saúde do SUS e sua unidade de referência.", "Confirme o fluxo de atendimento local; esta página não oferece consulta ou diagnóstico."],
+    "note": "O conteúdo é informativo. O ConnectGRU não substitui uma avaliação profissional nem confirma vagas para consultas.",
+    "source": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-mental", "sourceTitle": "Ministério da Saúde — Saúde Mental"
+  },
+  {
+    "slug": "mulher", "title": "Proteção à Mulher", "category": "Proteção e Direitos", "image": "mulher",
+    "intro": "Informações sobre acolhimento, proteção e acesso à rede de direitos das mulheres.",
+    "about": "A rede de proteção articula serviços de assistência social, saúde, segurança e orientação sobre direitos. O objetivo é oferecer acolhimento e encaminhamento adequado às necessidades de cada mulher. Os serviços municipais podem ter formas diferentes de acesso.",
+    "audience": "Mulheres que precisam de orientação sobre direitos, acolhimento e acesso à rede de proteção.",
+    "support": ["Informações sobre a rede de atendimento e proteção.", "Orientação para localizar acolhimento e acompanhamento especializado.", "Encaminhamento para os canais oficiais responsáveis por cada demanda."],
+    "steps": ["Consulte a Secretaria de Direitos Humanos para conhecer os serviços municipais para mulheres.", "Confirme como acessar a unidade e quais atendimentos ela oferece.", "Se precisar de acompanhamento socioassistencial especializado, consulte também o CREAS."],
+    "note": "Esta página não é um canal de emergência ou de denúncia e não recebe relatos pessoais. Use os canais oficiais para solicitar atendimento.",
+    "source": "https://forumdireitoshumanos.guarulhos.sp.gov.br/content/secretaria-de-direitos-humanos", "sourceTitle": "Guarulhos — Secretaria de Direitos Humanos"
+  },
+  {
+    "slug": "idoso", "title": "Atendimento ao Idoso", "category": "Direitos da Pessoa Idosa", "image": "idoso",
+    "intro": "Orientações sobre proteção, convivência e acesso a direitos e serviços para pessoas idosas.",
+    "about": "A rede pública atua para apoiar a autonomia, a convivência familiar e comunitária e a proteção dos direitos da pessoa idosa. As necessidades podem envolver assistência social, saúde e outros serviços. Cada atendimento tem seu próprio fluxo de acesso.",
+    "audience": "Pessoas idosas, familiares e pessoas de referência que precisam de orientação sobre cuidado, direitos e proteção social.",
+    "support": ["Orientação sobre acesso a serviços e direitos da pessoa idosa.", "Informações sobre atividades de convivência e fortalecimento de vínculos.", "Encaminhamento à proteção especializada quando há violação de direitos."],
+    "steps": ["Procure o CRAS de referência para orientação socioassistencial.", "Consulte os canais municipais de Direitos Humanos para conhecer as ofertas voltadas à pessoa idosa.", "Confirme os requisitos do serviço desejado; não há concessão automática de benefícios por esta página."],
+    "note": "As condições de acesso variam por serviço e benefício. Não há agendamento, contratação de cuidador ou análise de benefício no ConnectGRU.",
+    "source": "https://www.gov.br/mdh/pt-br/assuntos/noticias/2026/defeso-eleitoral/julho/voce-sabe-quais-sao-os-principais-direitos-previstos-no-estatuto-da-pessoa-idosa/", "sourceTitle": "Ministério dos Direitos Humanos — direitos da pessoa idosa"
+  },
+  {
+    "slug": "cadastro", "title": "Cadastro Social", "category": "Cadastro Único", "image": "cadastro",
+    "intro": "Entenda o Cadastro Único, registro utilizado para conhecer as famílias de baixa renda e apoiar o acesso a programas sociais.",
+    "about": "O Cadastro Único reúne informações sobre a composição familiar e as condições de vida. Ele pode ser utilizado na seleção de famílias para diferentes programas, mas a inscrição não garante acesso automático a benefícios. O cadastro é gratuito e segue o fluxo de atendimento do município.",
+    "audience": "Famílias que precisam se cadastrar, atualizar seus dados ou obter orientação sobre o Cadastro Único e sua utilização.",
+    "support": ["Orientação sobre inscrição e atualização cadastral.", "Informações sobre documentação e locais de atendimento.", "Esclarecimento sobre a diferença entre cadastramento e concessão de benefício."],
+    "steps": ["Consulte o serviço municipal de Cadastro Único ou o CRAS para confirmar onde realizar o atendimento.", "Confira a documentação exigida nos canais oficiais antes de comparecer.", "Informe mudanças na composição familiar e nas condições de vida durante a atualização."],
+    "note": "Esta página não faz inscrição nem recebe documentos. Não envie CPF ou outros dados pessoais pelo chat demonstrativo.",
+    "source": "https://www.gov.br/mds/pt-br/acoes-e-programas/cadastro-unico/Cadastro-unico/", "sourceTitle": "Ministério do Desenvolvimento Social — Cadastro Único"
+  },
+  {
+    "slug": "juventude", "title": "Juventude Ativa", "category": "Jovens e Oportunidades", "image": "juventude",
+    "intro": "Orientações para jovens encontrarem oportunidades de participação, formação, cultura, esporte e acesso a direitos.",
+    "about": "Nesta plataforma, Juventude Ativa reúne informações sobre oportunidades voltadas aos jovens. A Subsecretaria da Juventude de Guarulhos articula políticas públicas para pessoas de 15 a 29 anos. As ofertas e inscrições devem ser consultadas nos canais oficiais; este nome não confirma um programa municipal específico.",
+    "audience": "Jovens que querem conhecer ações públicas e oportunidades de desenvolvimento e participação na cidade.",
+    "support": ["Orientação para localizar ações e oportunidades para a juventude.", "Informações sobre canais municipais de participação e direitos.", "Encaminhamento aos responsáveis por cursos, atividades e inscrições."],
+    "steps": ["Consulte a Subsecretaria da Juventude e os canais oficiais de Guarulhos.", "Verifique as oportunidades em andamento e os requisitos de cada ação.", "Faça a inscrição somente pelo canal indicado pela organização responsável."],
+    "note": "Vagas, prazos e faixas etárias podem variar por atividade. Esta página não confirma inscrição ou reserva de vaga.",
+    "source": "https://forumdireitoshumanos.guarulhos.sp.gov.br/content/subsecretaria-da-juventude", "sourceTitle": "Guarulhos — Subsecretaria da Juventude"
+  }
+]

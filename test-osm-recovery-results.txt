@@ -1,0 +1,51 @@
+{
+    "results":  [
+                    {
+                        "name":  "Página servida por HTTP",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Leaflet local 1.9.4",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Inicialização única",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Cinco marcadores preservados",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Falha de rede abre alternativa",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Mensagem explica a falha",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Nova tentativa da alternativa disponível",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Sem exceções JavaScript",
+                        "passed":  true
+                    }
+                ],
+    "passed":  8,
+    "failed":  [
+
+               ],
+    "status":  "Recarregando a vista alternativa. Caso continue indisponível, use o link externo ou a lista de unidades.",
+    "errors":  [
+
+               ]
+}
+{
+    "recovery":  true,
+    "status":  "Mapa carregado. Selecione um marcador para ver a unidade.",
+    "errors":  [
+
+               ]
+}

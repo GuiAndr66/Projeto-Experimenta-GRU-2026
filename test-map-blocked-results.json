@@ -1,0 +1,45 @@
+{
+    "results":  [
+                    {
+                        "name":  "Mapa inicia independentemente de chat/login",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Etiquetas das fotos removidas",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Oito links para páginas de serviço",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Cinco marcadores",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Rede tratada: blocos visíveis ou mapa alternativo",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Alternativa tem URL e título",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Área vazia do mapa principal oculta",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Mensagem explica alternativa sem afirmar carregamento",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Sem erros JavaScript",
+                        "passed":  true
+                    }
+                ],
+    "tiles":  0,
+    "status":  "Não foi possível carregar o fundo do mapa principal. Vista geral alternativa de Guarulhos; os marcadores de unidades ficam no mapa principal. Se esta vista também não abrir, use o link externo ou a lista de unidades.",
+    "errors":  [
+
+               ]
+}

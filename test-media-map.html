@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR"><meta charset="utf-8"><title>Teste de fotos e mapa — ConnectGRU</title>
+<body><pre id="results">Executando…</pre><iframe id="site" title="ConnectGRU em teste" src="index.html" style="width:1440px;height:900px;border:0"></iframe>
+<script>
+document.getElementById('site').onload = async function () {
+  const doc = this.contentDocument, win = this.contentWindow, results = [];
+  const check = (name, ok) => results.push(`${ok ? 'PASS' : 'FAIL'} ${name}`);
+  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+  try {
+    const photos = [...doc.querySelectorAll('.program-photo')];
+    check('Oito serviços com fotos', photos.length === 8);
+    await Promise.all(photos.map(async photo => {
+      photo.loading = 'eager';
+      try { await Promise.race([photo.decode(), sleep(3000)]); } catch {}
+      check('Foto local carregada: ' + photo.getAttribute('src'), photo.complete && photo.naturalWidth === 960 && photo.naturalHeight === 540);
+      check('Texto alternativo: ' + photo.getAttribute('src'), photo.alt.startsWith('Foto ilustrativa:'));
+    }));
+    check('Leaflet local disponível', win.L?.version === '1.9.4' && !doc.querySelector('script[src*="unpkg"]'));
+    const map = win.initMap();
+    check('Mapa inicializado uma única vez', !!map && map === win.initMap());
+    check('Cinco marcadores preservados', doc.querySelectorAll('.leaflet-marker-icon').length === 5);
+    const marker = doc.querySelector('.leaflet-marker-icon'); marker.click();
+    check('Detalhes do marcador', !!doc.querySelector('.leaflet-popup-content strong'));
+    map.closePopup();
+    for (const width of [320,375,390,430,768,1024,1440]) {
+      this.style.width = `${width}px`;
+      // Força o layout do iframe antes de simular o evento do navegador.
+      void doc.documentElement.offsetWidth;
+      win.dispatchEvent(new win.Event('resize'));
+      await sleep(300);
+      const container = doc.getElementById('mapa-guarulhos');
+      check('Mapa dimensionado ' + width, Math.abs(map.getSize().x - container.clientWidth) <= 1 && container.clientHeight >= 320);
+      check('Sem overflow ' + width, doc.documentElement.scrollWidth <= width);
+    }
+    await Promise.race([new Promise(resolve => {
+      if (doc.querySelector('.leaflet-tile-loaded')) resolve();
+      else { const timer = setInterval(() => { if (doc.querySelector('.leaflet-tile-loaded')) { clearInterval(timer); resolve(); } }, 100); setTimeout(() => { clearInterval(timer); resolve(); }, 15000); }
+    }), sleep(16000)]);
+    const loaded = [...doc.querySelectorAll('.leaflet-tile-loaded')].filter(img => img.naturalWidth > 0);
+    check('Fundo cartográfico recebido da rede', loaded.length > 0);
+    results.push('INFO Blocos carregados: ' + loaded.length + '. ' + doc.getElementById('mapStatus').textContent);
+    const tileLayers = () => { const layers = []; map.eachLayer(layer => { if (layer instanceof win.L.TileLayer) layers.push(layer); }); return layers; };
+    const first = tileLayers()[0];
+    check('Fonte única OpenStreetMap', tileLayers().length === 1 && first._url === 'https://tile.openstreetmap.org/{z}/{x}/{y}.png');
+    first.fire('loading'); first.fire('tileerror'); first.fire('load'); await sleep(100);
+    check('Erro de rede informado', doc.getElementById('mapStatus').textContent.includes('Não foi possível carregar'));
+    check('Mapa alternativo disponível', !doc.getElementById('mapEmbed').hidden);
+    const retry = doc.getElementById('mapRetry');
+    check('Repetição disponível', !retry.hidden); retry.click();
+    check('Repetição inicia nova tentativa', doc.getElementById('mapStatus').textContent.includes('Recarregando'));
+  } catch(error) { results.push('ERROR ' + error.stack); }
+  document.getElementById('results').textContent = results.join('\n');
+};
+</script></body></html>

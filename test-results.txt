@@ -1,0 +1,47 @@
+PASS Barra superior removida
+PASS Botão flutuante
+PASS Sem overflow 320px
+PASS Painel visível 320px
+PASS Notificações visíveis 320px
+PASS Texto 200% sem overflow 320px
+PASS Sem overflow 375px
+PASS Painel visível 375px
+PASS Notificações visíveis 375px
+PASS Texto 200% sem overflow 375px
+PASS Sem overflow 390px
+PASS Painel visível 390px
+PASS Notificações visíveis 390px
+PASS Texto 200% sem overflow 390px
+PASS Sem overflow 430px
+PASS Painel visível 430px
+PASS Notificações visíveis 430px
+PASS Texto 200% sem overflow 430px
+PASS Sem overflow 768px
+PASS Painel visível 768px
+PASS Notificações visíveis 768px
+PASS Texto 200% sem overflow 768px
+PASS Sem overflow 1024px
+PASS Painel visível 1024px
+PASS Notificações visíveis 1024px
+PASS Texto 200% sem overflow 1024px
+PASS Sem overflow 1440px
+PASS Painel visível 1440px
+PASS Notificações visíveis 1440px
+PASS Texto 200% sem overflow 1440px
+PASS Fonte aumenta
+PASS Preferência salva
+PASS Preferência letterSpacing
+PASS Preferência lineSpacing
+PASS Preferência highContrast
+PASS Preferência darkMode
+PASS Preferência highlightLinks
+PASS Preferência strongFocus
+PASS Preferência simpleReading
+PASS Preferência reducedMotion
+PASS Preferência hideDecoration
+PASS Restaurar fonte
+PASS Foco retorna
+PASS Notificações abrem
+PASS Quatro exemplos
+PASS Estado vazio
+PASS Login preservado

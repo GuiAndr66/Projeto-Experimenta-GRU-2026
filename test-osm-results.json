@@ -1,0 +1,68 @@
+{
+    "results":  [
+                    {
+                        "name":  "Página servida por HTTP",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Leaflet local 1.9.4",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Inicialização única",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Cinco marcadores preservados",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Fonte única oficial OSM",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Mapa principal carregou pela rede",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Blocos cartográficos visíveis",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Créditos OSM visíveis",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Controle de zoom funciona",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Detalhes das unidades funcionam",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Alternar modos não duplica camadas",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Alternar modos preserva marcadores",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Mapa volta a carregar após alternar modos",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Sem exceções JavaScript",
+                        "passed":  true
+                    }
+                ],
+    "passed":  14,
+    "failed":  [
+
+               ],
+    "status":  "Mapa carregado. Selecione um marcador para ver a unidade.",
+    "errors":  [
+
+               ]
+}

@@ -1,0 +1,45 @@
+{
+    "results":  [
+                    {
+                        "name":  "Mapa inicia independentemente de chat/login",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Etiquetas das fotos removidas",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Oito links para páginas de serviço",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Cinco marcadores",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Rede tratada: blocos visíveis ou mapa alternativo",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Popup do marcador funciona",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Alternativa pode ser escolhida pelo usuário",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Retorna ao mapa principal",
+                        "passed":  true
+                    },
+                    {
+                        "name":  "Sem erros JavaScript",
+                        "passed":  true
+                    }
+                ],
+    "tiles":  9,
+    "status":  "Mapa carregado. Selecione um marcador para ver a unidade.",
+    "errors":  [
+
+               ]
+}

@@ -1,0 +1,42 @@
+PASS Oito serviços com fotos
+PASS Foto local carregada: assets/services/cras.jpg
+PASS Texto alternativo: assets/services/cras.jpg
+PASS Foto local carregada: assets/services/creas.jpg
+PASS Texto alternativo: assets/services/creas.jpg
+PASS Foto local carregada: assets/services/alimentacao.jpg
+PASS Texto alternativo: assets/services/alimentacao.jpg
+PASS Foto local carregada: assets/services/psicologico.jpg
+PASS Texto alternativo: assets/services/psicologico.jpg
+PASS Foto local carregada: assets/services/mulher.jpg
+PASS Texto alternativo: assets/services/mulher.jpg
+PASS Foto local carregada: assets/services/idoso.jpg
+PASS Texto alternativo: assets/services/idoso.jpg
+PASS Foto local carregada: assets/services/cadastro.jpg
+PASS Texto alternativo: assets/services/cadastro.jpg
+PASS Foto local carregada: assets/services/juventude.jpg
+PASS Texto alternativo: assets/services/juventude.jpg
+PASS Leaflet local disponível
+PASS Mapa inicializado uma única vez
+PASS Cinco marcadores preservados
+PASS Detalhes do marcador
+PASS Mapa dimensionado 320
+PASS Sem overflow 320
+PASS Mapa dimensionado 375
+PASS Sem overflow 375
+PASS Mapa dimensionado 390
+PASS Sem overflow 390
+PASS Mapa dimensionado 430
+PASS Sem overflow 430
+PASS Mapa dimensionado 768
+PASS Sem overflow 768
+PASS Mapa dimensionado 1024
+PASS Sem overflow 1024
+PASS Mapa dimensionado 1440
+PASS Sem overflow 1440
+PASS Fundo cartográfico recebido da rede
+INFO Blocos carregados: 12. Mapa carregado. Selecione um marcador para ver a unidade.
+PASS Fonte única OpenStreetMap
+PASS Erro de rede informado
+PASS Mapa alternativo disponível
+PASS Repetição disponível
+PASS Repetição inicia nova tentativa

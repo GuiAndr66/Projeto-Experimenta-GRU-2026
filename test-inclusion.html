@@ -1,0 +1,46 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>Testes locais ConnectGRU</title>
+<body><pre id="results">Executando…</pre><iframe id="site" title="Site em teste" src="index.html" style="height:900px;border:0"></iframe>
+<script>
+const frame = document.getElementById('site');
+frame.onload = async () => {
+ const output = [], check = (name, condition) => output.push(`${condition ? 'PASS' : 'FAIL'} ${name}`);
+ const win = frame.contentWindow, doc = win.document;
+ await new Promise(resolve => setTimeout(resolve, 500));
+ try {
+ check('Barra superior removida', !doc.querySelector('.access-bar'));
+ check('Botão flutuante', !!doc.querySelector('#accessibilityToggle'));
+ for (const width of [320,375,390,430,768,1024,1440]) {
+  frame.style.width = `${width}px`; await new Promise(resolve => setTimeout(resolve, 80));
+  doc.body.style.overflowX = 'visible';
+  check(`Sem overflow ${width}px`, doc.documentElement.scrollWidth <= width);
+  doc.getElementById('accessibilityToggle').click();
+  const panel = doc.getElementById('accessibilityPanel'), rect = panel.getBoundingClientRect();
+  check(`Painel visível ${width}px`, panel.open && rect.left >= 0 && rect.right <= width + 1);
+  panel.close();
+  doc.getElementById('notificationToggle').click();
+  const notificationRect = doc.getElementById('notificationsPanel').getBoundingClientRect();
+  check(`Notificações visíveis ${width}px`, notificationRect.left >= 0 && notificationRect.right <= width + 1);
+  doc.getElementById('notificationsPanel').close();
+  doc.documentElement.style.setProperty('--font-scale', 2);
+  check(`Texto 200% sem overflow ${width}px`, doc.documentElement.scrollWidth <= width); if(doc.documentElement.scrollWidth > width) output.push([...doc.querySelectorAll("main *,header *,footer *")].filter(n=>n.getBoundingClientRect().right>width+1 && n.getBoundingClientRect().width).map(n=>n.className).slice(0,15).join(" | "));
+  doc.documentElement.style.setProperty('--font-scale', 1);
+ }
+ doc.getElementById('accessibilityToggle').click();
+ const panel = doc.getElementById('accessibilityPanel');
+ doc.getElementById('fontUp').click();
+ check('Fonte aumenta', Number(doc.documentElement.style.getPropertyValue('--font-scale')) > 1);
+ check('Preferência salva', JSON.parse(win.localStorage.getItem('connectgru.accessibility')).fontScale > 1);
+ for (const input of panel.querySelectorAll('[data-preference]')) { input.checked = true; input.dispatchEvent(new win.Event('change')); check(`Preferência ${input.dataset.preference}`, JSON.parse(win.localStorage.getItem('connectgru.accessibility'))[input.dataset.preference] === true); }
+ doc.getElementById('preferencesReset').click(); check('Restaurar fonte', doc.documentElement.style.getPropertyValue('--font-scale') === '1');
+ panel.close(); await new Promise(resolve => setTimeout(resolve, 100)); check('Foco retorna', doc.activeElement.id === 'accessibilityToggle');
+ doc.getElementById('notificationToggle').click();
+ check('Notificações abrem', doc.getElementById('notificationsPanel').open);
+ check('Quatro exemplos', doc.querySelectorAll('#notificationList article').length === 4);
+ doc.getElementById('readAll').click(); doc.getElementById('unreadOnly').click();
+ check('Estado vazio', doc.getElementById('notificationList').textContent.includes('Nenhuma'));
+ doc.getElementById('notificationsPanel').close();
+ win.openLoginModal('CRAS'); check('Login preservado', doc.getElementById('loginModal').open); win.closeLoginModal();
+ } catch(error) { output.push('ERROR ' + error.stack); }
+ document.getElementById('results').textContent = output.join('\n');
+};
+</script></body></html>

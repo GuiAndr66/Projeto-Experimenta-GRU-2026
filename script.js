@@ -79,6 +79,7 @@ const modalProgramBadge = document.getElementById('modalProgramBadge');
  * @param {string} program - Nome do programa selecionado
  */
 function openLoginModal(program) {
+  loginModal.showModal();
   loginModal.classList.add('open');
   loginModal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
@@ -98,6 +99,7 @@ function openLoginModal(program) {
 
 /** Fecha o modal de login */
 function closeLoginModal() {
+  loginModal.close();
   loginModal.classList.remove('open');
   loginModal.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
@@ -235,7 +237,7 @@ const knowledgeBase = [
   {
     keywords: ['cesta', 'aliment', 'fome', 'comida', 'basic', 'auxílio aliment', 'cesta básica'],
     response: `🍽️ <strong>Auxílio Alimentação</strong><br/><br/>
-      O programa distribui cestas básicas mensalmente para famílias inscritas no CadÚnico 
+      O programa distribui cestas básicas mensalmente para famílias inscritas no CadÚnico
       com renda per capita de até R$ 218,00.<br/><br/>
       📍 <strong>Como acessar:</strong><br/>
       Dirija-se ao CRAS mais próximo da sua região com CPF, RG e comprovante de renda.<br/><br/>
@@ -244,9 +246,9 @@ const knowledgeBase = [
   {
     keywords: ['violência', 'violencia', 'mulher', 'agressão', 'agressao', 'doméstic', 'assédio', 'abuso'],
     response: `🆘 <strong>Proteção à Mulher</strong><br/><br/>
-      Se você ou alguém está em situação de violência doméstica, <strong>ligue 180</strong> 
+      Se você ou alguém está em situação de violência doméstica, <strong>ligue 180</strong>
       (gratuito, 24h) — Central de Atendimento à Mulher.<br/><br/>
-      📍 Em Guarulhos, o <strong>CREAS</strong> oferece atendimento especializado, 
+      📍 Em Guarulhos, o <strong>CREAS</strong> oferece atendimento especializado,
       acolhimento e orientação jurídica gratuita.<br/><br/>
       🔒 Todo atendimento é sigiloso e gratuito.`
   },
@@ -263,7 +265,7 @@ const knowledgeBase = [
   {
     keywords: ['cras', 'referência', 'assistência social', 'vulnerabilidade'],
     response: `🏠 <strong>CRAS – Centro de Referência de Assistência Social</strong><br/><br/>
-      O CRAS é a porta de entrada dos serviços sociais. Atende famílias em situação 
+      O CRAS é a porta de entrada dos serviços sociais. Atende famílias em situação
       de vulnerabilidade social.<br/><br/>
       📍 <strong>Unidades em Guarulhos:</strong><br/>
       • CRAS Centro – R. das Acácias, 230<br/>
@@ -274,7 +276,7 @@ const knowledgeBase = [
   {
     keywords: ['creas', 'especializado', 'violação', 'direito'],
     response: `❤️ <strong>CREAS – Atendimento Especializado</strong><br/><br/>
-      O CREAS atende situações de maior vulnerabilidade: violência, exploração e 
+      O CREAS atende situações de maior vulnerabilidade: violência, exploração e
       violação de direitos.<br/><br/>
       📍 CREAS Guarulhos – R. Voluntários da Pátria, 540 – Centro<br/>
       🕐 Seg–Sex: 8h às 17h<br/><br/>
@@ -283,7 +285,7 @@ const knowledgeBase = [
   {
     keywords: ['psicológ', 'psicolog', 'saúde mental', 'depressão', 'ansiedade', 'terapia', 'emocional'],
     response: `🧠 <strong>Apoio Psicológico Gratuito</strong><br/><br/>
-      A SDS de Guarulhos oferece atendimento psicossocial gratuito para indivíduos 
+      A SDS de Guarulhos oferece atendimento psicossocial gratuito para indivíduos
       e famílias em sofrimento emocional.<br/><br/>
       📝 Documentos necessários: RG e CPF<br/>
       🕐 Agendamento: (11) 2408-0008<br/><br/>
@@ -339,8 +341,8 @@ const knowledgeBase = [
   {
     keywords: ['obrigado', 'obrigada', 'valeu', 'vlw', 'thanks', 'muito obrigado'],
     response: `😊 De nada! Fico feliz em ajudar.<br/><br/>
-      Se precisar de mais informações ou quiser agendar um atendimento, 
-      estou aqui! Você também pode ligar para <strong>(11) 2408-0008</strong> 
+      Se precisar de mais informações ou quiser agendar um atendimento,
+      estou aqui! Você também pode ligar para <strong>(11) 2408-0008</strong>
       para falar com nossa equipe presencialmente.`
   },
   {
@@ -356,7 +358,7 @@ const knowledgeBase = [
   }
 ];
 
-const defaultResponse = `🤔 Entendi sua dúvida! Para informações específicas, 
+const defaultResponse = `🤔 Entendi sua dúvida! Para informações específicas,
   nesta equipe pode ajudar melhor.<br/><br/>
   📞 <strong>Central de Atendimento:</strong> (11) 2408-0008<br/>
   🕐 Seg–Sex: 8h às 17h<br/><br/>
@@ -411,8 +413,8 @@ function sendChat() {
     typingDiv.remove();
     const response = getBotResponse(value);
     appendMessage(response, 'bot');
-    
-    // Se não for um fluxo de múltiplos passos (como o agendamento que tem botões próprios), 
+
+    // Se não for um fluxo de múltiplos passos (como o agendamento que tem botões próprios),
     // oferece a barra de avaliação após a resposta simples.
     if (!response.includes('onclick="escolherUnidade') && !response.includes('onclick="iniciarAgendamento')) {
       setTimeout(() => oferecerAvaliacao(), 1000);
@@ -461,7 +463,7 @@ function escapeHTML(str) {
 
 function escolherUnidade(servico) {
   appendMessage(`Quero agendar: ${servico}`, 'user');
-  
+
   const respuestaBot = `Você selecionou <strong>${servico}</strong>.<br/><br/>
     Em qual região você prefere ser atendido(a)?
     <div class="chat-suggestions" style="padding:0; margin-top:8px;">
@@ -470,18 +472,18 @@ function escolherUnidade(servico) {
       <button class="chat-suggestion" onclick="iniciarAgendamento('${servico}', 'Sul')">Unidade Sul</button>
       <button class="chat-suggestion" onclick="iniciarAgendamento('${servico}', 'Norte')">Unidade Norte</button>
     </div>`;
-    
+
   simularDigitacao(respuestaBot);
 }
 
 function iniciarAgendamento(servico, unidade) {
   appendMessage(`Prefiro na Unidade ${unidade}`, 'user');
-  
+
   const horarios = [
     '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
     '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30'
   ];
-  
+
   let botoesHorarios = '';
   horarios.forEach(hora => {
     botoesHorarios += `<button class="chat-suggestion" onclick="confirmarAgendamento('${servico}', '${unidade}', '${hora}')">${hora}</button>`;
@@ -492,21 +494,21 @@ function iniciarAgendamento(servico, unidade) {
     <div class="chat-suggestions" style="padding:0; margin-top:8px;">
       ${botoesHorarios}
     </div>`;
-    
+
   simularDigitacao(respuestaBot);
 }
 
 function confirmarAgendamento(servico, unidade, horario) {
   appendMessage(`Prefiro às ${horario}`, 'user');
-  
+
   const respuestaBot = `✅ <strong>Agendamento Confirmado!</strong><br/><br/>
     Serviço: <strong>${servico}</strong><br/>
     Unidade: <strong>${unidade}</strong><br/>
     Horário: <strong>${horario}</strong><br/><br/>
     Um SMS com os detalhes, protocolo e a data exata será enviado para o seu número cadastrado. Por favor, lembre-se de levar um documento com foto.`;
-    
+
   simularDigitacao(respuestaBot);
-  
+
   // Oferece a avaliação do chatbot logo após a finalização do agendamento
   setTimeout(() => oferecerAvaliacao(), 2000);
 }
@@ -557,7 +559,7 @@ function oferecerAvaliacao() {
       </div>
     </div>
   `;
-  
+
   chatMessages.appendChild(msgDiv);
   scrollChat();
 }
@@ -593,51 +595,17 @@ function submeterAvaliacao(nota) {
 // ACCESSIBILITY
 // ===========================
 
-let fontScale    = 1;
-let highContrast = false;
-
-document.getElementById('btnContrast').addEventListener('click', function() {
-  highContrast = !highContrast;
-  document.body.classList.toggle('high-contrast', highContrast);
-  this.setAttribute('aria-pressed', highContrast);
-  showToast(
-    highContrast ? '♿ Alto contraste ativado' : 'Alto contraste desativado',
-    'info',
-    2000
-  );
-});
-
-document.getElementById('btnFontUp').addEventListener('click', () => {
-  if (fontScale >= 1.4) {
-    showToast('Tamanho máximo de fonte atingido.', 'info', 2000);
-    return;
-  }
-  fontScale = Math.min(fontScale + 0.1, 1.4);
-  document.documentElement.style.setProperty('--font-scale', fontScale);
-  showToast('Fonte aumentada', 'info', 1800);
-});
-
-document.getElementById('btnFontDown').addEventListener('click', () => {
-  if (fontScale <= 0.8) {
-    showToast('Tamanho mínimo de fonte atingido.', 'info', 2000);
-    return;
-  }
-  fontScale = Math.max(fontScale - 0.1, 0.8);
-  document.documentElement.style.setProperty('--font-scale', fontScale);
-  showToast('Fonte diminuída', 'info', 1800);
-});
-
-
 // ===========================
 // COUNTERS (impact bar)
 // ===========================
 
 function animateCounter(el, target, suffix = '', duration = 2000) {
+  if (document.body.classList.contains('reduced-motion')) duration = 0;
   const start = performance.now();
 
   function step(timestamp) {
     const elapsed  = timestamp - start;
-    const progress = Math.min(elapsed / duration, 1);
+    const progress = duration === 0 ? 1 : Math.min(elapsed / duration, 1);
     const ease = 1 - Math.pow(2, -10 * progress);
     const current = Math.floor(ease * target);
 
@@ -722,19 +690,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
-      const target = document.querySelector(anchor.getAttribute('href'));
+      const href = anchor.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
         const offset = 120;
         const top    = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
+        window.scrollTo({ top, behavior: document.body.classList.contains('reduced-motion') ? 'instant' : 'smooth' });
       }
     });
   });
 
   setTimeout(() => {
     appendMessage(
-      `💡 <strong>Dica:</strong> Você pode perguntar sobre qualquer serviço social de Guarulhos — 
+      `💡 <strong>Dica:</strong> Você pode perguntar sobre qualquer serviço social de Guarulhos —
       CRAS, alimentação, apoio psicológico, proteção à mulher, realizar agendamentos e muito mais!`,
       'bot'
     );
@@ -749,49 +719,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // KEYBOARD NAVIGATION
 // ===========================
 
-document.querySelectorAll('.program-card, .unit-card').forEach(card => {
+document.querySelectorAll('.unit-card').forEach(card => {
   card.setAttribute('tabindex', '0');
   card.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && e.target === card) {
       const btn = card.querySelector('button');
       if (btn) btn.click();
     }
   });
-});
-
-// ===========================
-// MAPA INTERATIVO (Leaflet)
-// ===========================
-function initMap() {
-  const mapEl = document.getElementById('mapa-guarulhos');
-  if (!mapEl) return;
-
-  const map = L.map('mapa-guarulhos').setView([-23.4545, -46.5333], 12);
-
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap contributors',
-    maxZoom: 19
-  }).addTo(map);
-
-  const iconBlue = L.divIcon({ className: 'custom-pin blue', html: '<div class="pin-inner"></div>', iconSize: [22, 22] });
-  const iconRed = L.divIcon({ className: 'custom-pin red', html: '<div class="pin-inner"></div>', iconSize: [22, 22] });
-  const iconGreen = L.divIcon({ className: 'custom-pin green', html: '<div class="pin-inner"></div>', iconSize: [22, 22] });
-
-  const unidades = [
-    { nome: 'CRAS Centro', end: 'R. das Acacia, 230', lat: -23.4695, lng: -46.5280, icone: iconBlue },
-    { nome: 'CRAS Pimentas', end: 'Av. dos Pimentas, 1.450', lat: -23.4410, lng: -46.4020, icone: iconBlue },
-    { nome: 'CRAS Sul', end: 'Av. Guarulhos, 800', lat: -23.4655, lng: -46.5510, icone: iconBlue },
-    { nome: 'CREAS Guarulhos', end: 'R. Voluntários da Pátria, 540', lat: -23.4650, lng: -46.5300, icone: iconRed },
-    { nome: 'UBS Norte', end: 'Diversas regiões', lat: -23.4450, lng: -46.5500, icone: iconGreen }
-  ];
-
-  unidades.forEach(u => {
-    L.marker([u.lat, u.lng], { icon: u.icone })
-      .addTo(map)
-      .bindPopup(`<strong>${u.nome}</strong><br><span style="font-size:0.85rem">${u.end}</span>`);
-  });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  initMap();
 });
