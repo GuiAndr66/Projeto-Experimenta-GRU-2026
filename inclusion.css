@@ -63,8 +63,14 @@ main :is(.section-container,.impact-text,.impact-cards,.chatbot-input,.chatbot-c
  .utility-panel { inset: auto 0 0; width: 100%; max-height: 85dvh; padding: 20px 16px calc(20px + env(safe-area-inset-bottom)); border-radius: 20px 20px 0 0; }
  .nav-container { padding-inline: 12px; gap: 8px; }
  .nav-actions { gap: 8px; }
- .hero-title { font-size: clamp(2rem, 9vw, 3rem); overflow-wrap: anywhere; }
- .hero-grid { padding-inline: 16px; }
+ .hero { min-height: auto; padding: 56px 0 64px; align-items: flex-start; }
+ .hero-grid { grid-template-columns: 1fr; gap: 28px; width: 100%; padding-inline: 20px; }
+ .hero-content { width: 100%; max-width: none; }
+ main .hero-title,
+ main .hero-title span,
+ main .hero-subtitle { overflow-wrap: normal; word-break: normal; hyphens: none; }
+ .hero-title { font-size: clamp(2rem, 9vw, 3rem); }
+ .hero-subtitle { width: 100%; max-width: none; }
  .unit-card { flex-wrap: wrap; }
  .unit-info { flex-basis: 60%; }
  .hero-stats { flex-wrap: wrap; }
